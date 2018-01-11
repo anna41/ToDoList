@@ -1,0 +1,54 @@
+﻿@model IEnumerable<ToDoList_.Models.Plan>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<p>
+  @Html.Partial("Create", new ToDoList_.Models.Plan())
+</p>
+<table class="table sizeOfTable">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)         
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Done)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <div id="@item.PlanId" class="editText">
+            <span> 
+                @item.Description
+              </span>
+                <input type="text" hidden/>
+                </div>  
+        </td>
+         <td>
+        @Html.CheckBoxFor(modelItem => item.Done, new { id = item.PlanId,@class = "ActiveCheck" })
+         </td>
+
+        <td>           
+            <input class="btn btn-danger" type="button" value="Delete" onclick="onDelete(@item.PlanId)" />
+        </td>
+    </tr>
+}      
+
+</table>
+<tr>
+    <td>
+        <input type="button" class="btn btn1 btn-primary" value="Show all plans" onclick="allPlans()" />
+        <input type="button" class="btn btn1 btn-primary" value="Show all done plans" onclick="allDone()" />
+        <input type="button" class="btn btn1 btn-primary" tyle="width: 10px" value="Show all not done plans" onclick="allNotDone()" />
+    </td>
+</tr>   
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/Custom_Scripts/TodoList.js")
+}

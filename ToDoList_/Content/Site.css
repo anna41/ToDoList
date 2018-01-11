@@ -1,0 +1,69 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+ .btn1 {
+        margin-right: 30px;
+        font-size:medium;
+    }
+ 
+ @media screen and (max-device-width: 1024px) and (min-device-width:415px) {
+    body {
+        font-size: 30px;
+    }
+ .btn1 {
+        margin-top: 10px;
+        width:350px;
+        max-width:none;
+    }
+}
+
+@media screen and (max-device-width: 414px) {
+    body {
+        font-size: 15px;
+    }
+
+    .btn1 {
+        margin-top: 10px;
+        width: 60%;
+    }
+    .sizeOfTable {
+        width:20px;
+        max-width:none;
+    }
+}
+
+
+.bg {
+    /* The image used */
+    background-image: url("../Content/paper6.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position:center ;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
